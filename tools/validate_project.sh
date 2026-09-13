@@ -8,3 +8,9 @@ rg -q '^  AndroidTargetArchitectures: 2$' ProjectSettings/ProjectSettings.asset
 rg -q 'com\.ajordiojo\.senciddimisinreis' ProjectSettings/ProjectSettings.asset
 test -f Assets/Scene/MainMenu.unity
 test -f Assets/Scene/School.unity
+rg -q '^  hitTextMessage: SEN CİDDİ MİSİN\?$' Assets/Scene/School.unity
+rg -q '^  hitTextHoldTime: 2$' Assets/Scene/School.unity
+rg -q '^  hitTextFadeTime: 0$' Assets/Scene/School.unity
+rg -q 'if \(fadeTime <= 0f\)' Assets/Scripts/Core/GameControllerScript.cs
+test -f Assets/Scripts/Core/UI/ModBrandingBootstrap.cs
+rg -q 'TitleText = "Sen Ciddimisin Reis\?"' Assets/Scripts/Core/UI/ModBrandingBootstrap.cs
