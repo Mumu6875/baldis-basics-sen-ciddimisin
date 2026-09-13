@@ -53,7 +53,12 @@ namespace ControlFreak2Editor
     internal static class TouchControlWizardUtils
     {
         public static ControlFreak2.TouchControlPanel GetRigPanel(object rig) => null;
-        public static bool IsThereEventSystemInTheScene() => true;
+
+        // Control Freak 2 expects an integer count here (0 means no EventSystem).
+        public static int IsThereEventSystemInTheScene()
+        {
+            return UnityEngine.Object.FindObjectsOfType<UnityEngine.EventSystems.EventSystem>().Length;
+        }
 
         public static Sprite GetDefaultSuperTouchZoneSprite(string controlName) => null;
         public static Sprite GetDefaultAnalogJoyHatSprite(string controlName) => null;
